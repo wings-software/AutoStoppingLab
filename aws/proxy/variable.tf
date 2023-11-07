@@ -1,6 +1,6 @@
 variable "name" {
   type    = string
-  default = "test-tf"
+  default = "proxy-demo1"
 }
 
 variable "subnets" {
@@ -16,14 +16,12 @@ variable "region" {
   type    = string
   default = "us-west-2"
 }
-variable "hostedzone" {
-  type    = string
-  default = "/hostedzone/Z06070943NA512B2KHEHF"
-}
+
+
 # HARNESS Variables
 variable "account_id" {
   type    = string
-  default = "Lightwing_Non_Prod"
+  default = "wOSgd9G8SuajZo1dISEF2g"
 }
 variable "cloud_connector_id" {
   type    = string

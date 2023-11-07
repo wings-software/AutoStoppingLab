@@ -1,6 +1,6 @@
 variable "name" {
   type    = string
-  default = "test-tf"
+  default = "ec2-with-proxy"
 }
 
 variable "subnets" {
@@ -20,10 +20,18 @@ variable "hostedzone" {
   type    = string
   default = "/hostedzone/Z06070943NA512B2KHEHF"
 }
+variable "proxy_id" {
+  type    = string
+  default = "ap-cl5aro88n70u9vog47n0"
+}
+variable "proxy_public_ip" {
+  type    = string
+  default = "54.213.80.177"
+}
 # HARNESS Variables
 variable "account_id" {
   type    = string
-  default = "Lightwing_Non_Prod"
+  default = "wOSgd9G8SuajZo1dISEF2g"
 }
 variable "cloud_connector_id" {
   type    = string
