@@ -34,6 +34,11 @@ terraform init
 terraform apply
 ```
 
+After the above commands are successful, 
+
+- Navigate to `Harness -> CloudCost -> Setup -> Load Balancer` and ensure the proxy is created without errors.
+- Open AWS console and search for the proxy VM in the list of EC2 VMs. Proxy VM name will be defined in `variable.tf`. Default name will be `proxy-demo1`.
+
 # EC2 HTTP & SSH with proxy
 
 ```
