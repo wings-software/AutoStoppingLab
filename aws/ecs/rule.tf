@@ -1,7 +1,7 @@
 resource "harness_autostopping_aws_alb" "harness_alb" {
-  name                   = "${var.name}-lb"
+  name                   = "${var.name}EcsAppLB"
   cloud_connector_id     = var.cloud_connector_id
-  host_name              = local.tags.lb_hostname
+  host_name              = "ecs.${local.tags.lb_hostname}"
   alb_arn                = aws_lb.alb.arn
   region                 = var.region
   vpc                    = var.vpc
@@ -24,7 +24,7 @@ resource "harness_autostopping_rule_ecs" "rule" {
     }		
 
     http {
-        proxy_id = "ap-cji5svq969qdhketbnqg"             
+        proxy_id = harness_autostopping_aws_alb.harness_alb.identifier             
     }
        
 }

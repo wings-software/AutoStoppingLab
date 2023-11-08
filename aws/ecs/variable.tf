@@ -27,7 +27,7 @@ variable "task_exec_role" {
 # HARNESS Variables
 variable "account_id" {
   type    = string
-  default = "Lightwing_Non_Prod"
+  default = "wOSgd9G8SuajZo1dISEF2g"
 }
 variable "cloud_connector_id" {
   type    = string
@@ -35,7 +35,7 @@ variable "cloud_connector_id" {
 }
 variable "api_key" {
   type    = string
-  default = "Lightwing_Non_Prod"
+  default = "Set the env variable TF_VAR_api_key"
 }
 
 locals {
