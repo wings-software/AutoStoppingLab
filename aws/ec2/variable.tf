@@ -16,6 +16,10 @@ variable "region" {
   type    = string
   default = "us-west-2"
 }
+variable "ami" {
+  type    = string
+  default = "ami-0efcece6bed30fd98"
+}
 variable "hostedzone" {
   type    = string
   default = "/hostedzone/Z06070943NA512B2KHEHF"
