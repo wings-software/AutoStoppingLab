@@ -1,11 +1,11 @@
 
 # Create RDS AutoStopping rule
 resource "harness_autostopping_rule_rds" "test" {
-  name               = var.name
+  name               = "${var.name}-db"
   cloud_connector_id = var.cloud_connector_id
   idle_time_mins     = 30
   database {
-    id     = var.rds_arn
+    id     = aws_db_instance.rds.arn
     region = var.region
   }
 

@@ -1,6 +1,6 @@
 variable "name" {
   type    = string
-  default = "proxy-demo1"
+  default = "tf-test"
 }
 
 variable "subnets" {
@@ -16,7 +16,10 @@ variable "region" {
   type    = string
   default = "us-west-2"
 }
-
+variable "hostedzone" {
+  type    = string
+  default = "/hostedzone/Z06070943NA512B2KHEHF"
+}
 
 # HARNESS Variables
 variable "account_id" {

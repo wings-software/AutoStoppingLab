@@ -1,6 +1,6 @@
 variable "name" {
   type    = string
-  default = "test-tf"
+  default = "testtf"
 }
 
 variable "subnets" {
@@ -26,12 +26,19 @@ variable "rds_port" {
 }
 variable "proxy_id" {
   type    = string
-  default = "ap-cl5aro88n70u9vog47n0"
+  default = "ap-cl5i1108n70u9vog5v5g"
 }
-
 variable "hostedzone" {
   type    = string
   default = "/hostedzone/Z06070943NA512B2KHEHF"
+}
+variable "dbuser" {
+  type    = string
+  default = "harness"
+}
+variable "dbcred" {
+  type    = string
+  default = "H$rn3ssTerraformTest"
 }
 
 # HARNESS Variables
