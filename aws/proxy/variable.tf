@@ -5,7 +5,7 @@ variable "name" {
 
 variable "subnets" {
   type    = list(string)
-  default = ["subnet-e6e3c9ad", "subnet-bb7be890", "subnet-b96873e3"]
+  default = ["subnet-682a8223", "subnet-e357d99a", "subnet-bef497e4"]
 }
 
 variable "vpc" {
