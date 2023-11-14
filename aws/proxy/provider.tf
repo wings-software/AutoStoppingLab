@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     harness = {
-      source = "harness/harness"
+      source  = "harness/harness"
       version = "0.28.3"
     }
     aws = {
@@ -10,10 +10,8 @@ terraform {
     }
   }
 }
-provider "harness" {
-  account_id       = var.account_id
-  platform_api_key = var.api_key
-}
+
+provider "harness" {}
 
 provider "aws" {
   region = var.region

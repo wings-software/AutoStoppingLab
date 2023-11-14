@@ -1,49 +1,28 @@
 variable "name" {
-  type    = string
-  default = "<replace with your name>"
-}
-
-variable "subnets" {
-  type    = list(string)
-  default = ["subnet-682a8223", "subnet-e357d99a", "subnet-bef497e4"]
+  type        = string
+  description = "A unique key to use for all resource. If not set a random name is generated"
+  default     = ""
 }
 
 variable "vpc" {
   type    = string
   default = "vpc-51edc228"
 }
+
 variable "region" {
   type    = string
   default = "us-west-2"
 }
-variable "hostedzone" {
-  type    = string
-  default = "/hostedzone/Z2X614CI8JN37A"
-}
+
 variable "proxy_id" {
-  type    = string
-  default = "ap-cl9ci0c259bkv48fjq30"
-}
-variable "proxy_public_ip" {
-  type    = string
-  default = "35.87.29.217"
-}
-# HARNESS Variables
-variable "account_id" {
-  type    = string
-  default = "SAsyUUHTTImuYSZ35HPDvw"
-}
-variable "cloud_connector_id" {
-  type    = string
-  default = "SE_AWS_CCM_Connector"
-}
-variable "api_key" {
-  type    = string
-  default = "Set the env variable TF_VAR_api_key"
+  type = string
 }
 
-locals {
-  tags = {
-    lb_hostname = "${var.name}.tools.harnessio.se"
-  }
+variable "proxy_public_ip" {
+  type = string
+}
+
+variable "harness_cloud_connector_id" {
+  type    = string
+  default = "SE_AWS_CCM_Connector"
 }
