@@ -1,16 +1,16 @@
 variable "name" {
   type    = string
-  default = "test-tf"
+  default = "<replace with your name>"  
 }
 
 variable "subnets" {
   type    = list(string)
-  default = ["subnet-e6e3c9ad", "subnet-bb7be890", "subnet-b96873e3"]
+  default = ["subnet-682a8223", "subnet-e357d99a", "subnet-bef497e4"]
 }
 
 variable "vpc" {
   type    = string
-  default = "vpc-c1e05fb9"
+  default = "vpc-51edc228"
 }
 variable "region" {
   type    = string
@@ -22,16 +22,16 @@ variable "ami" {
 }
 variable "hostedzone" {
   type    = string
-  default = "/hostedzone/Z06070943NA512B2KHEHF"
+  default = "/hostedzone/Z2X614CI8JN37A"
 }
 # HARNESS Variables
 variable "account_id" {
   type    = string
-  default = "Lightwing_Non_Prod"
+  default = "SAsyUUHTTImuYSZ35HPDvw"
 }
 variable "cloud_connector_id" {
   type    = string
-  default = "Lightwing_Non_Prod"
+  default = "SE_AWS_CCM_Connector"
 }
 variable "api_key" {
   type    = string
@@ -40,6 +40,6 @@ variable "api_key" {
 
 locals {
   tags = {
-    lb_hostname = "${var.name}.lightwingtest.com"
+    lb_hostname = "${var.name}.tools.harnessio.se"
   }
 }
