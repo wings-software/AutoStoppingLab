@@ -10,10 +10,8 @@ terraform {
     }
   }
 }
-provider "harness" {
-  account_id = var.account_id
-  platform_api_key    = var.api_key
-}
+
+provider "harness" {}
 
 provider "aws" {
   region = var.region

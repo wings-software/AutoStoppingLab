@@ -1,8 +1,8 @@
 resource "aws_ecs_task_definition" "service" {
-  family = "${var.name}EcsSampleApp"
+  family = "${local.name}EcsSampleApp"
   container_definitions = jsonencode([
     {
-      name      = "${var.name}SampleApp"
+      name      = "${local.name}SampleApp"
       image     = "public.ecr.aws/docker/library/httpd:latest"
       cpu       = 0
       essential = true
@@ -25,15 +25,15 @@ resource "aws_ecs_task_definition" "service" {
       volumesFrom = []
     }
   ])
-  execution_role_arn = var.task_exec_role
-  network_mode = "awsvpc"
+  execution_role_arn       = var.task_exec_role
+  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu = 1024
-  memory = 2048
+  cpu                      = 1024
+  memory                   = 2048
 
 }
 resource "aws_security_group" "http" {
-  name        = "${var.name}SampleEcsAppSG"
+  name        = "${local.name}SampleEcsAppSG"
   description = "Security group for whitelisting ports required for EcsSampleApp"
   vpc_id      = var.vpc
 
@@ -55,25 +55,25 @@ resource "aws_security_group" "http" {
   }
 
   tags = {
-    Name = "${var.name}default"
+    Name = "${local.name}default"
   }
 }
 resource "aws_ecs_service" "sampleapp" {
-  name            = "${var.name}sample-httpd-app"
-  cluster         = aws_ecs_cluster.foo.id
-  task_definition = aws_ecs_task_definition.service.arn
-  desired_count   = 1
-  launch_type = "FARGATE"
+  name             = "${local.name}sample-httpd-app"
+  cluster          = aws_ecs_cluster.cluster.id
+  task_definition  = aws_ecs_task_definition.service.arn
+  desired_count    = 1
+  launch_type      = "FARGATE"
   platform_version = "LATEST"
   network_configuration {
-    subnets = var.subnets
-    security_groups = [aws_security_group.http.id]
+    subnets          = var.subnets
+    security_groups  = [aws_security_group.http.id]
     assign_public_ip = true
   }
 
   load_balancer {
     target_group_arn = aws_lb_target_group.http.arn
-    container_name   = "${var.name}SampleApp"
+    container_name   = "${local.name}SampleApp"
     container_port   = 80
   }
 }
