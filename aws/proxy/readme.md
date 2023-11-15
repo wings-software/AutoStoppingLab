@@ -19,6 +19,10 @@ Run `terraform init` and `terraform apply` to:
 1. Provision a security group to be used for the proxy
 2. Provision an autostopping proxy in the target account
 
+## DNS
+
+If you do not have a route53 hosted zone, then the proxy will be provisioned with a domain of `192.168.0.1.nip.io` which will resolve to `192.168.0.1`, once the proxy has been provisioned, locate the public IP of the proxy (or internal IP) and replace `192.168.0.1` in the terraform to that IP and re-apply the terraform.
+
 ## Destroy
 
 If you run a `terraform destroy` you will still need to manually delete the proxy VM from AWS before the security group can be deleted via terraform.

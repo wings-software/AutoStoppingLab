@@ -3,6 +3,7 @@ locals {
 }
 
 data "aws_route53_zone" "zone" {
+  count   = var.hostedzone == "" ? 0 : 1
   zone_id = var.hostedzone
 }
 
