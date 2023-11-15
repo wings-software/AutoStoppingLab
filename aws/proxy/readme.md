@@ -18,3 +18,7 @@ Run `terraform init` and `terraform apply` to:
 
 1. Provision a security group to be used for the proxy
 2. Provision an autostopping proxy in the target account
+
+## Destroy
+
+If you run a `terraform destroy` you will still need to manually delete the proxy VM from AWS before the security group can be deleted via terraform.
