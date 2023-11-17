@@ -1,12 +1,12 @@
 resource "aws_launch_template" "template" {
-  image_id      = var.ami
-  instance_type = "t3.nano"
-  user_data     = filebase64("userdata.tpl")
-  vpc_security_group_ids = [ aws_security_group.allow_http.id ]
+  image_id               = var.ami
+  instance_type          = "t3.nano"
+  user_data              = filebase64("userdata.tpl")
+  vpc_security_group_ids = [aws_security_group.allow_http.id]
 }
 
 resource "aws_autoscaling_group" "asg" {
-  name               = "${var.name}-asg"
+  name               = "${local.name}-asg"
   availability_zones = var.availability_zones
   desired_capacity   = 2
   max_size           = 3
@@ -19,7 +19,7 @@ resource "aws_autoscaling_group" "asg" {
 
   tag {
     key                 = "Name"
-    value               = "${var.name}-asg"
+    value               = "${local.name}-asg"
     propagate_at_launch = true
   }
 
@@ -31,4 +31,4 @@ resource "aws_autoscaling_group" "asg" {
     triggers = ["tag"]
   }
 }
-  
+
