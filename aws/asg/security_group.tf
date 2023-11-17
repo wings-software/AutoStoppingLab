@@ -1,14 +1,14 @@
 resource "aws_security_group" "allow_http" {
-  name        = "${local.name}-asg-allow_http"
+  name        = "${var.name}-asg-allow_http"
   description = "Allow HTTP inbound traffic"
   vpc_id      = var.vpc
 
   ingress {
-    description = "Open HTTP"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    description      = "Open HTTP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = [ "0.0.0.0/0" ]
   }
 
   egress {
@@ -20,6 +20,6 @@ resource "aws_security_group" "allow_http" {
   }
 
   tags = {
-    Name = "${local.name}-allow_http"
+    Name = "${var.name}-allow_http"
   }
 }
