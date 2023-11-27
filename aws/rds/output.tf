@@ -7,7 +7,7 @@ output "db" {
 }
 
 output "rule" {
-  value = "https://app.harness.io/ng/account/${data.harness_current_account.current.id}/ce/autostopping-rules/rule/${harness_autostopping_rule_rds.rule.id}"
+  value = "https://app.harness.io/ng/account/<harness account id>/ce/autostopping-rules/rule/${harness_autostopping_rule_rds.rule.id}"
 }
 
 output "connect" {

@@ -33,5 +33,5 @@ resource "harness_autostopping_rule_vm" "rule" {
       port = 22
     }
   }
-  custom_domains = [ "${var.proxy_public_ip}.nip.io"]
+  custom_domains = ["${var.proxy_public_ip}.nip.io"]
 }
