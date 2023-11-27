@@ -1,5 +1,5 @@
 locals {
-  name = var.name == "" ? random_pet.name.id : var.name
+  name = var.name == "" ? random_pet.name.id : lower(var.name)
   tags = {
     lb_hostname = "${local.name}.${data.aws_route53_zone.zone.name}"
   }
