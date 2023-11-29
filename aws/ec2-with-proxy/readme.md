@@ -1,23 +1,20 @@
-# ec2 with proxy
+# EC2 With Proxy
 
-Create an EC2 autostopping rule using the proxy
+Provision an EC2 instance and create an autostopping rule for the instance.
 
-**this requires an autostopping proxy, see the `proxy` example to provision one**
+This requires you have an auto stopping proxy deployed. See the `proxy` folder for an example.
 
-## Setup
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/be2b628f-0b96-4089-b8b3-a2c11fe89407)
 
-1. Set all variables in `variable.tf` to values for your AWS and Harness account
-2. [Configure AWS authentication](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#authentication-and-configuration) for Terraform
-3. [Configure Harness authentication](https://registry.terraform.io/providers/harness/harness/latest/docs) for Terraform
+## Resources 
 
-    a. `HARNESS_ACCOUNT_ID`: your Harness account id
+`aws_security_group.allow_http` security group to allow traffic
 
-    b. `HARNESS_PLATFORM_API_KEY`: an api key for your Harness account, with CCM admin permissions
+`aws_instance.ec2` instance set up as a web server
 
-## Provision
+`harness_autostopping_rule_vm.rule` auto stop rule for web server
 
-Run `terraform init` and `terraform apply` to:
-
-1. Provision a security group to be used for the instance
-2. Provision an ec2 as a web server
-3. Create an autostopping rule for the web instance
+### How to use this terraform playbook?
+Replace the variables in `variable.tf` file and then run the terraform commands listed above. This will:
+1. Provision an ec2 machine with nginx insalled
+2. Create an AutoStopping Rule for the VM and add it under the specified proxy
