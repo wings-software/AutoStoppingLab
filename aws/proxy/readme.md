@@ -2,6 +2,8 @@
 
 Create an EC2 auto stopping proxy
 
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/48f4345e-cd50-42bf-a1f7-3be772b9180c)
+
 ## Resources
 
 `aws_security_group.sgforproxy` a security group to allow access
