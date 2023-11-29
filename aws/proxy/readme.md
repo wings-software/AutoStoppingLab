@@ -1,6 +1,12 @@
-# proxy
+# Proxy
 
-Create an EC2 autostopping proxy
+Create an EC2 auto stopping proxy
+
+## Resources
+
+`aws_security_group.sgforproxy` a security group to allow access
+
+`harness_autostopping_aws_proxy.rdsconnectproxy` a harness proxy resource, creates an ec2 in your account
 
 ## Setup
 
