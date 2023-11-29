@@ -5,15 +5,23 @@ Provision an ECS cluster, service, alb, and create an autostopping rule for the 
 ## Resources
 
 `aws_ecs_cluster.cluster` a fargate ecs cluster
+
 `aws_ecs_task_definition.service` a sample web application for ecs
+
 `aws_ecs_service.sampleapp` the ecs service to run our example app
+
 `aws_security_group.http` a security group for our web app
 
+
 `aws_lb.alb` a load balancer for our application
+
 `aws_lb_target_group.http` a target group to send traffic to our app
+
 `aws_lb_listener.ecs` a listener for traffic on our alb
 
+
 `harness_autostopping_aws_alb.harness_alb` a harness lb resource to import the alb created above
+
 `harness_autostopping_rule_ecs.rule` an auto stop rule pointing at the alb/cluster/service created above
 
 ## How to use this terraform playbook?
