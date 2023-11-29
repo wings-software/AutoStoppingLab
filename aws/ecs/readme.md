@@ -2,7 +2,7 @@
 
 Provision an ECS cluster, service, alb, and create an autostopping rule for the service.
 
-![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/256abff4-e8df-4e2a-98ab-0864a8a63a9e)
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/95a3784b-a418-4551-8cee-1ab1981ef6bb)
 
 ## Resources
 
