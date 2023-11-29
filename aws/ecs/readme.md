@@ -2,6 +2,8 @@
 
 Provision an ECS cluster, service, alb, and create an autostopping rule for the service.
 
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/256abff4-e8df-4e2a-98ab-0864a8a63a9e)
+
 ## Resources
 
 `aws_ecs_cluster.cluster` a fargate ecs cluster
