@@ -2,6 +2,8 @@
 
 Provision an EC2 instance, alb, and create an autostopping rule for the instance.
 
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/8c3f008e-19a8-41d9-ad6b-e93ba1bae4c4)
+
 ## Resources
 
 `aws_instance.ec2` an ec2 instance set up as a web server
