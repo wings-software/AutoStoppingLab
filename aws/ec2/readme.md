@@ -1,6 +1,28 @@
-# ec2
+# EC2
 
-EC2 autostopping with ALB
+Provision an EC2 instance, alb, and create an autostopping rule for the instance.
+
+## Resources
+
+`aws_instance.ec2` an ec2 instance set up as a web server
+
+`aws_security_group.allow_http` a security group for our web app
+
+
+`aws_lb.alb` a load balancer for our application
+
+`aws_lb_target_group.http` a target group to send traffic to our app
+
+`aws_lb_target_group_attachment` set our ec2 instance as the target for our group
+
+`aws_lb_listener.ec2` a listener for traffic on our alb
+
+`aws_lb_listener_rule.static` listen for traffic for our hostname
+
+
+`harness_autostopping_aws_alb.harness_alb` a harness lb resource to import the alb created above
+
+`harness_autostopping_rule_vm.rule` an auto stop rule pointing at the alb/instance created above
 
 ## Setup
 
