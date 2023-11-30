@@ -44,3 +44,8 @@ Run `terraform init` and `terraform apply` to:
 2. Provision an ALB and create a rule for routing to the VM
 3. Create a Harness Lb with the ALB
 4. Create an AutoStopping Rule for the VM
+
+Once the TF completes, you will need to modify the rule in the Harness UI to link your rule to the route53 record.
+
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/ab1a3163-3657-4244-833b-7e8ccb4b176b)
+
