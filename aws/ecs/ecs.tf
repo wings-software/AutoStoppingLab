@@ -1,3 +1,3 @@
-resource "aws_ecs_cluster" "foo" {
-  name = "${var.name}SampleAppCluster"
+resource "aws_ecs_cluster" "cluster" {
+  name = "${local.name}SampleAppCluster"
 }

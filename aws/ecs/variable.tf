@@ -1,45 +1,35 @@
 variable "name" {
-  type    = string
-  default = "test-tf"
+  type        = string
+  description = "A unique key to use for all resource. If not set a random name is generated"
+  default     = ""
 }
 
 variable "subnets" {
   type    = list(string)
-  default = ["subnet-e6e3c9ad", "subnet-bb7be890", "subnet-b96873e3"]
+  default = ["subnet-682a8223", "subnet-e357d99a", "subnet-bef497e4"]
 }
 
 variable "vpc" {
   type    = string
-  default = "vpc-c1e05fb9"
+  default = "vpc-51edc228"
 }
+
 variable "region" {
   type    = string
   default = "us-west-2"
 }
+
 variable "hostedzone" {
   type    = string
-  default = "/hostedzone/Z06070943NA512B2KHEHF"
-}
-variable "task_exec_role" {
-  type    = string
-  default = "arn:aws:iam::357919113896:role/ecsTaskExecutionRole"
-}
-# HARNESS Variables
-variable "account_id" {
-  type    = string
-  default = "wOSgd9G8SuajZo1dISEF2g"
-}
-variable "cloud_connector_id" {
-  type    = string
-  default = "Lightwing_Non_Prod"
-}
-variable "api_key" {
-  type    = string
-  default = "Set the env variable TF_VAR_api_key"
+  default = "Z2X614CI8JN37A"
 }
 
-locals {
-  tags = {
-    lb_hostname = "${var.name}.lightwingtest.com"
-  }
+variable "task_exec_role" {
+  type    = string
+  default = "arn:aws:iam::759984737373:role/ecsTaskExecutionRole"
+}
+
+variable "harness_cloud_connector_id" {
+  type    = string
+  default = "SE_AWS_CCM_Connector"
 }
