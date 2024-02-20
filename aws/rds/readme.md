@@ -1,8 +1,18 @@
-# rds
+# RDS
 
-Create an RDS autostopping rule using the proxy
+Create an RDS instance, and an auto stopping rule for it.
 
-**this requires an autostopping proxy, see the `proxy` example to provision one**
+This requires you have an auto stopping proxy deployed. See the `proxy` folder for an example.
+
+![image](https://github.com/wings-software/AutoStoppingLab/assets/7338312/b78a0587-b675-4f43-af7e-c3fee97241bc)
+
+## Resources
+
+`aws_security_group.allow_mysql` security group to allow sql access to db
+
+`aws_db_instance.rds` rds instance
+
+`harness_autostopping_rule_rds.rule` harness auto stop rule for the database
 
 ## Setup
 
