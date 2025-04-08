@@ -1,12 +1,14 @@
 resource "harness_autostopping_aws_alb" "harness_alb" {
-  name                   = "${local.name}-lb"
-  cloud_connector_id     = var.harness_cloud_connector_id
-  host_name              = local.tags.lb_hostname
-  alb_arn                = var.alb_arn == "" ? aws_lb.alb[0].arn : var.alb_arn
-  region                 = var.region
-  vpc                    = var.vpc
-  security_groups        = [aws_security_group.http.id]
-  route53_hosted_zone_id = "/hostedzone/${var.hostedzone}"
+  name               = "${local.name}-lb"
+  cloud_connector_id = var.harness_cloud_connector_id
+  host_name          = local.lb_hostname
+  alb_arn            = var.alb_arn == "" ? aws_lb.alb[0].arn : var.alb_arn
+  region             = var.region
+  vpc                = var.vpc
+  security_groups    = [aws_security_group.http.id]
+  # setting hosted zone is not needed when route53 is already set up externally
+  # route53_hosted_zone_id            = "/hostedzone/${var.hostedzone}"
+  delete_cloud_resources_on_destroy = false
 }
 
 resource "harness_autostopping_rule_vm" "rule" {
@@ -35,5 +37,5 @@ resource "harness_autostopping_rule_vm" "rule" {
       status_code_to   = 299
     }
   }
-  custom_domains = ["ec2rule.${local.tags.lb_hostname}"]
+  custom_domains = [local.lb_hostname]
 }

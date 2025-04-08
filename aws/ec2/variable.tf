@@ -4,14 +4,16 @@ variable "name" {
   default     = ""
 }
 
-variable "subnets" {
-  type    = list(string)
-  default = ["subnet-682a8223", "subnet-e357d99a", "subnet-bef497e4"]
+variable "alb_subnets" {
+  type = list(string)
+}
+
+variable "ec2_subnet" {
+  type = string
 }
 
 variable "vpc" {
-  type    = string
-  default = "vpc-51edc228"
+  type = string
 }
 
 variable "region" {
@@ -20,13 +22,13 @@ variable "region" {
 }
 
 variable "ami" {
-  type    = string
-  default = "ami-0efcece6bed30fd98"
+  type        = string
+  default     = "ami-0efcece6bed30fd98"
+  description = "ubuntu ami (default for us-west-2)"
 }
 
 variable "hostedzone" {
-  type    = string
-  default = "Z2X614CI8JN37A"
+  type = string
 }
 
 variable "alb_arn" {
@@ -36,6 +38,5 @@ variable "alb_arn" {
 }
 
 variable "harness_cloud_connector_id" {
-  type    = string
-  default = "SE_AWS_CCM_Connector"
+  type = string
 }

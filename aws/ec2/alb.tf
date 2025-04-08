@@ -4,7 +4,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.http.id]
-  subnets            = var.subnets
+  subnets            = var.alb_subnets
 }
 
 resource "aws_lb_target_group" "http" {
@@ -22,7 +22,7 @@ resource "aws_lb_target_group_attachment" "ec2" {
 
 resource "aws_security_group" "http" {
   name        = "${local.name}-alb"
-  description = "Security group for whitelisting ports required for EcsSampleApp"
+  description = "Security group for whitelisting ports required for http"
   vpc_id      = var.vpc
 
   ingress {
@@ -43,7 +43,7 @@ resource "aws_security_group" "http" {
   }
 
   tags = {
-    Name = "default"
+    Name = "${local.name}-alb"
   }
 }
 
@@ -69,7 +69,7 @@ resource "aws_lb_listener_rule" "static" {
 
   condition {
     host_header {
-      values = ["ec2rule.${local.tags.lb_hostname}"]
+      values = [local.lb_hostname]
     }
   }
 }
