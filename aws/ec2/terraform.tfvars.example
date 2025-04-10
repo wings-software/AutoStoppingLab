@@ -1,0 +1,13 @@
+# name = "stoptest"
+
+alb_subnets = ["subnet-0f91c1012f9ad74c5", "subnet-0c4c1bc4cacd3cd4d"]
+
+ec2_subnet = "subnet-08f14e7142d333595"
+
+vpc = "vpc-078b51c6cbc5581f1"
+
+ami = "ami-075686beab831bb7f"
+
+# hostedzone = "Z05277053H89HS3J9I2TS"
+
+harness_cloud_connector_id = "cs"

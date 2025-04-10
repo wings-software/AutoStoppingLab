@@ -1,3 +1,4 @@
+# Security group for the instance
 resource "aws_security_group" "allow_http" {
   name        = "${local.name}-instance-allow_http"
   description = "Allow HTTP inbound traffic"
